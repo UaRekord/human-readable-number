@@ -1,8 +1,6 @@
 module.exports = function toReadable (number) {
     numberString = (number).toString();
-    if (numberString === '0') {
-        output =  'zero';
-    } else if (numberString.length === 1) {
+    if (numberString.length === 1) {
         output = convertDigit(numberString);
     } else if (numberString.length === 2) {
         output = convertTwoDigits(numberString);
@@ -16,7 +14,6 @@ module.exports = function toReadable (number) {
     return output;
 }
 
-
 function convertTwoDigits(input) {
     if (input[0] === '0') {
         return convertDigit(input[1]);
@@ -28,7 +25,7 @@ function convertTwoDigits(input) {
 
 function convertDigit(input) {
     const digit = {
-        '0': '',
+        '0': 'zero',
         '1': 'one',
         '2': 'two',
         '3': 'three',
@@ -69,7 +66,6 @@ function checkLastDigits(input) {
 
 function convertTens(input) {
     const tens = {
-        '0': '',
         '2': 'twenty',
         '3': 'thirty',
         '4': 'forty',
